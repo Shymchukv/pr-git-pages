@@ -3,94 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ПР 1.2: Система Git | Шимчук Владислав</title>
-    <link rel="stylesheet" href="https://shymchukv.github.io/sys-prog-course/style.css">
+    <title>ПР 1.2: Git & GitHub Pages | Шимчук Владислав</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="main-header hero">
-        <div class="container hero-content">
-            <a href="https://shymchukv.github.io/sys-prog-course/" class="github-link-btn" style="background:#0969da; margin-bottom:15px;">
-                ← Повернутися на головну курсу
+
+    <div class="background-glow"></div>
+
+    <header class="hero">
+        <div class="container">
+            <a href="https://shymchukv.github.io/sys-prog-course/" class="back-link">
+                <i class="fas fa-arrow-left"></i> Повернутися до курсу
             </a>
-            <h1>Практична робота 1.2: Git та GitHub Pages</h1>
-            <p class="author">
-                Виконав: <strong>Шимчук Владислав</strong> | Група: <strong>1 КТ 23</strong>
+            <div class="hero-badge"><i class="fab fa-git-alt"></i> ПР 1.2</div>
+            <h1 class="gradient-text">Система контролю версій Git</h1>
+            <p class="hero-author">
+                <i class="fas fa-user-code"></i> Студент: <strong>Шимчук Владислав</strong> &bull; Група <strong>1 КТ 23</strong>
             </p>
         </div>
     </header>
 
     <main class="container">
-        <!-- Блок 1 -->
-        <section class="topic-card" style="margin-bottom: 20px;">
-            <span class="badge">Теорія</span>
-            <h3>1. Інформація про СКВ та Git</h3>
-            <p><strong>Система контролю версій (СКВ / VCS)</strong> — це спеціальне програмне забезпечення, призначене для збереження історії змін у файлах проєкту. Вона дає змогу повертатися до попередніх версій коду, відстежувати авторів правок та безпечно працювати над проєктом у команді.</p>
-            <p><strong>Git</strong> — це найпопулярніша розподілена система контролю версій, створена Лінусом Торвальдсом у 2005 році. На відміну від централізованих систем, кожен розробник зберігає повну копію всього репозиторію на власному комп'ютері.</p>
+        
+        <!-- Блок 1: Інформація -->
+        <section class="glass-card">
+            <div class="card-header">
+                <i class="fas fa-database icon-neon"></i>
+                <h2>1. Що таке СКВ та Git</h2>
+            </div>
+            <p><strong>Система контролю версій (СКВ / VCS)</strong> — це спеціалізоване програмне забезпечення для фіксації та керування змінами в сирцовому коді. Вона дозволяє відмотувати проєкт до будь-якої точки в минулому та працювати в команді без ризику перезаписати чужий код.</p>
+            <p><strong>Git</strong> — це розподілена система контролю версій нового покоління, створена Лінусом Торвальдсом. У Git кожен розробник володіє повноцінною локальною копією всієї історії репозиторію.</p>
         </section>
 
-        <!-- Блок 2 -->
-        <section class="topic-card" style="margin-bottom: 20px;">
-            <span class="badge">Переваги</span>
-            <h3>2. Основні можливості та переваги Git</h3>
-            <ul style="padding-left: 20px; margin-top: 10px;">
-                <li><strong>Автономність:</strong> Більшість операцій (коміти, перегляд історії, створення гілок) виконуються локально без доступу до мережі.</li>
-                <li><strong>Гнучке гілкування (Branching):</strong> Легке створення ізольованих гілок для розробки нових функцій та їх зручне об'єднання (Merge).</li>
-                <li><strong>Висока швидкість:</strong> Операції локального збереження відбуваються миттєво.</li>
-                <li><strong>Цілісність даних:</strong> Усі коміти хешуються (алгоритмом SHA), що унеможливлює непомітну зміну історії.</li>
-            </ul>
-        </section>
-
-        <!-- Блок 3 -->
-        <section class="topic-card" style="margin-bottom: 20px;">
-            <span class="badge">Команди</span>
-            <h3>3. 10 Базових команд Git</h3>
-            <div style="overflow-x: auto; margin-top: 10px;">
-                <table style="width:100%; border-collapse: collapse;">
-                    <thead>
-                        <tr style="background:#f6f8fa; text-align:left;">
-                            <th style="padding:10px; border:1px solid #ddd;">Команда</th>
-                            <th style="padding:10px; border:1px solid #ddd;">Опис та коментар</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td style="padding:10px; border:1px solid #ddd;"><code>git init</code></td><td style="padding:10px; border:1px solid #ddd;">Створення нового порожнього локального репозиторію.</td></tr>
-                        <tr><td style="padding:10px; border:1px solid #ddd;"><code>git clone &lt;url&gt;</code></td><td style="padding:10px; border:1px solid #ddd;">Копіювання існуючого віддаленого репозиторію на комп'ютер.</td></tr>
-                        <tr><td style="padding:10px; border:1px solid #ddd;"><code>git status</code></td><td style="padding:10px; border:1px solid #ddd;">Перевірка стану відстежуваних, змінених та нових файлів.</td></tr>
-                        <tr><td style="padding:10px; border:1px solid #ddd;"><code>git add .</code></td><td style="padding:10px; border:1px solid #ddd;">Додавання всіх змінених файлів до зони підготовки (Staging Area).</td></tr>
-                        <tr><td style="padding:10px; border:1px solid #ddd;"><code>git commit -m "msg"</code></td><td style="padding:10px; border:1px solid #ddd;">Фіксація збережених змін із описовим коментарем.</td></tr>
-                        <tr><td style="padding:10px; border:1px solid #ddd;"><code>git branch</code></td><td style="padding:10px; border:1px solid #ddd;">Перегляд списку існуючих локальних гілок.</td></tr>
-                        <tr><td style="padding:10px; border:1px solid #ddd;"><code>git checkout -b &lt;name&gt;</code></td><td style="padding:10px; border:1px solid #ddd;">Створення нової гілки та автоматичний перехід на неї.</td></tr>
-                        <tr><td style="padding:10px; border:1px solid #ddd;"><code>git merge &lt;branch&gt;</code></td><td style="padding:10px; border:1px solid #ddd;">Об'єднання вказаної гілки з поточною активною гілкою.</td></tr>
-                        <tr><td style="padding:10px; border:1px solid #ddd;"><code>git pull</code></td><td style="padding:10px; border:1px solid #ddd;">Отримання останніх змін із віддаленого сервера та їх злиття.</td></tr>
-                        <tr><td style="padding:10px; border:1px solid #ddd;"><code>git push origin main</code></td><td style="padding:10px; border:1px solid #ddd;">Надсилання локальних комітів у віддалений репозиторій на GitHub.</td></tr>
-                    </tbody>
-                </table>
+        <!-- Блок 2: Переваги -->
+        <section class="glass-card">
+            <div class="card-header">
+                <i class="fas fa-rocket icon-neon"></i>
+                <h2>2. Основні можливості та переваги</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-bolt"></i>
+                    <h4>Миттєва швидкість</h4>
+                    <p>Майже всі операції виконуються локально на вашому ПК без затримок мережі.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-code-branch"></i>
+                    <h4>Гнучке гілкування</h4>
+                    <p>Створення ізольованих гілок для фіч та їх швидке об'єднання (Merge).</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Надійність даних</h4>
+                    <p>Історія захищена контролями цілісності за допомогою хешування SHA.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-wifi-slash"></i>
+                    <h4>Автономність</h4>
+                    <p>Повноцінна робота з кодом та історією без підключення до Інтернету.</p>
+                </div>
             </div>
         </section>
 
-        <!-- Блок 4 -->
-        <section class="topic-card" style="margin-bottom: 20px;">
-            <span class="badge">Сертифікат</span>
-            <h3>4. Сертифікат про проходження курсу</h3>
-            <div style="text-align:center; margin-top:15px;">
-                <img src="cert.png" alt="Сертифікат Git" style="max-width:100%; height:auto; border-radius:8px; border:1px solid #ddd;">
+        <!-- Блок 3: Команди (Термінал) -->
+        <section class="glass-card">
+            <div class="card-header">
+                <i class="fas fa-terminal icon-neon"></i>
+                <h2>3. 10 Базових команд Git</h2>
+            </div>
+            
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="terminal-title">bash — git-cli</span>
+                </div>
+                <div class="terminal-body">
+                    <div class="cmd-row">
+                        <span class="cmd-name">git init</span>
+                        <span class="cmd-desc"># Ініціалізація нового локального репозиторію</span>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-name">git clone &lt;url&gt;</span>
+                        <span class="cmd-desc"># Клонування віддаленого репозиторію на ПК</span>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-name">git status</span>
+                        <span class="cmd-desc"># Перевірка стану змінених та нових файлів</span>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-name">git add .</span>
+                        <span class="cmd-desc"># Додавання всіх файлів до зони підготовки (Staging)</span>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-name">git commit -m "msg"</span>
+                        <span class="cmd-desc"># Фіксація підготовлених змін із коментарем</span>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-name">git branch</span>
+                        <span class="cmd-desc"># Перегляд списку існуючих локальних гілок</span>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-name">git checkout -b &lt;name&gt;</span>
+                        <span class="cmd-desc"># Створення нової гілки та перехід на неї</span>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-name">git merge &lt;branch&gt;</span>
+                        <span class="cmd-desc"># Злиття вказаної гілки з поточною</span>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-name">git pull</span>
+                        <span class="cmd-desc"># Завантаження та злиття змін із сервера</span>
+                    </div>
+                    <div class="cmd-row">
+                        <span class="cmd-name">git push origin main</span>
+                        <span class="cmd-desc"># Відправка локальних комітів на GitHub</span>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Блок 5 -->
-        <section class="topic-card" style="margin-bottom: 20px;">
-            <span class="badge">Джерела</span>
-            <h3>5. Джерела інформації</h3>
-            <ul style="padding-left: 20px; margin-top: 10px;">
-                <li><a href="https://git-scm.com/book/uk/v2" target="_blank" style="color:#0969da;">Офіційна книга Pro Git (Український переклад)</a></li>
-                <li><a href="https://docs.github.com/en" target="_blank" style="color:#0969da;">Офіційна документація GitHub Docs</a></li>
-                <li><a href="https://learngitbranching.js.org/" target="_blank" style="color:#0969da;">Інтерактивний тренажер Learn Git Branching</a></li>
-            </ul>
+        <!-- Блок 4: Сертифікат -->
+        <section class="glass-card">
+            <div class="card-header">
+                <i class="fas fa-certificate icon-neon"></i>
+                <h2>4. Сертифікат про проходження курсу</h2>
+            </div>
+            <div class="cert-wrapper">
+                <img src="cert.png" alt="Сертифікат Git" class="cert-img">
+            </div>
         </section>
+
+        <!-- Блок 5: Джерела -->
+        <section class="glass-card">
+            <div class="card-header">
+                <i class="fas fa-link icon-neon"></i>
+                <h2>5. Корисні джерела</h2>
+            </div>
+            <div class="links-list">
+                <a href="https://git-scm.com/book/uk/v2" target="_blank" class="resource-link">
+                    <i class="fas fa-book"></i> Pro Git Book (Українська)
+                </a>
+                <a href="https://docs.github.com/en" target="_blank" class="resource-link">
+                    <i class="fab fa-github"></i> GitHub Official Docs
+                </a>
+                <a href="https://learngitbranching.js.org/" target="_blank" class="resource-link">
+                    <i class="fas fa-gamepad"></i> Learn Git Branching (Тренажер)
+                </a>
+            </div>
+        </section>
+
     </main>
 
     <footer>
         <p>© 2026 Шимчук Владислав | Група 1 КТ 23</p>
     </footer>
+
 </body>
 </html>
